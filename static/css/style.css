@@ -1,0 +1,1294 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+
+:root {
+    --fundo: #F4F0E8;
+    --texto: #171717;
+    --destaque: #B85C38;
+    --verde: #29483F;
+    --cinza: #A8A39A;
+    --branco: #FFFFFF;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+
+    font-family: "Inter", sans-serif;
+
+    line-height: 1.6;
+}
+
+
+header {
+    width: 100%;
+
+    padding: 25px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+}
+
+
+header h1 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.5rem;
+
+    letter-spacing: 2px;
+}
+
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+
+nav a {
+    color: var(--texto);
+
+    text-decoration: none;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+nav a:hover {
+    color: var(--destaque);
+}
+
+
+.hero {
+    min-height: 75vh;
+
+    display: flex;
+    align-items: center;
+
+    padding: 8% 10%;
+
+    background:
+        linear-gradient(
+            rgba(23, 23, 23, 0.55),
+            rgba(23, 23, 23, 0.55)
+        ),
+        url("../imagens/home/hero.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+
+.hero-conteudo {
+    max-width: 750px;
+}
+
+
+.subtitulo,
+.etiqueta {
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+
+.hero h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: clamp(3rem, 7vw, 6rem);
+
+    line-height: 1;
+
+    margin: 25px 0;
+}
+
+
+.hero p {
+    max-width: 600px;
+
+    font-size: 1.1rem;
+}
+
+
+.botao {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 14px 25px;
+
+    background: var(--destaque);
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+
+.botao:hover {
+    transform: translateY(-3px);
+}
+
+
+.introducao {
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 120px 30px;
+}
+
+
+.introducao h2 {
+    font-family: "Playfair Display", serif;
+
+    font-size: 3rem;
+
+    line-height: 1.1;
+
+    margin: 20px 0 30px;
+}
+
+
+.introducao p {
+    margin-bottom: 20px;
+
+    color: #4b4b4b;
+}
+
+
+.categorias {
+    padding: 50px 6% 120px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.card {
+    padding: 35px;
+
+    border: 1px solid rgba(23, 23, 23, 0.15);
+
+    min-height: 330px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: 0.3s;
+}
+
+
+.card:hover {
+    transform: translateY(-8px);
+
+    background: var(--branco);
+}
+
+
+.card span {
+    font-size: 2rem;
+}
+
+
+.card h3 {
+    margin: 25px 0 15px;
+
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.6rem;
+}
+
+
+.card p {
+    color: #555;
+
+    margin-bottom: 25px;
+}
+
+
+.card a {
+    margin-top: auto;
+
+    color: var(--destaque);
+
+    text-decoration: none;
+
+    font-weight: 700;
+
+    font-size: 0.8rem;
+}
+
+
+footer {
+    padding: 50px 6%;
+
+    background: var(--verde);
+
+    color: white;
+}
+
+
+footer p:first-child {
+    font-family: "Playfair Display", serif;
+
+    font-size: 1.5rem;
+
+    margin-bottom: 10px;
+}
+
+
+@media (max-width: 900px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .hero {
+        min-height: 80vh;
+
+        padding: 10% 7%;
+    }
+
+
+    .hero h2 {
+        font-size: 3rem;
+    }
+
+
+    .categorias {
+        grid-template-columns: 1fr;
+    }
+
+
+    .introducao h2 {
+        font-size: 2.3rem;
+    }
+
+}
+.pagina-intro {
+    max-width: 1000px;
+    margin: auto;
+    padding: 120px 30px 80px;
+}
+
+.pagina-intro h2 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1;
+    margin: 25px 0;
+}
+
+.pagina-intro > p:last-child {
+    max-width: 650px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.conteudo {
+    padding: 80px 10%;
+    background: #FFFFFF;
+}
+
+.conteudo h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.conteudo p {
+    max-width: 700px;
+    color: #555;
+}
+
+/* =========================
+   PÁGINA DIREITOS
+========================= */
+
+.hero-direitos {
+    padding: 90px 8%;
+    background: linear-gradient(135deg, #172554, #1e3a8a);
+    color: white;
+}
+
+.hero-direitos span {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-direitos h1 {
+    max-width: 850px;
+    font-size: 48px;
+    line-height: 1.15;
+    margin: 15px 0;
+}
+
+.hero-direitos p {
+    max-width: 760px;
+    font-size: 18px;
+    color: #dbeafe;
+}
+
+
+.direitos-intro {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+
+    align-items: center;
+}
+
+.direitos-intro h2 {
+    font-size: 34px;
+    margin: 12px 0 20px;
+}
+
+.direitos-intro p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+.tag {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+
+.destaque-direito {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+}
+
+.destaque-direito span {
+    font-size: 35px;
+}
+
+.destaque-direito strong {
+    display: block;
+    font-size: 20px;
+    margin: 15px 0 8px;
+}
+
+.destaque-direito p {
+    color: #64748b;
+}
+
+
+.cards-direitos {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card-direito {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: transform .2s, box-shadow .2s;
+}
+
+.card-direito:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.08);
+}
+
+.icone-direito {
+    font-size: 32px;
+}
+
+.card-direito h3 {
+    margin: 15px 0 10px;
+}
+
+.card-direito p {
+    color: #64748b;
+}
+
+
+.principios {
+    background: white;
+    padding: 70px 8%;
+}
+
+.titulo-secao {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.titulo-secao span {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.titulo-secao h2 {
+    font-size: 34px;
+    margin: 10px 0;
+}
+
+.titulo-secao p {
+    color: #64748b;
+}
+
+
+.principios-grid {
+    max-width: 1100px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.principio {
+    border-top: 3px solid #2563eb;
+    padding-top: 20px;
+}
+
+.principio strong {
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.principio h3 {
+    margin: 10px 0;
+}
+
+.principio p {
+    color: #64748b;
+}
+
+
+.fontes-direitos {
+    max-width: 1050px;
+    margin: 60px auto;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.fontes-direitos h2 {
+    font-size: 30px;
+}
+
+.fontes-direitos > p {
+    color: #64748b;
+    margin: 10px 0 30px;
+}
+
+.fontes-direitos-lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fontes-direitos-lista div {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+
+    min-width: 220px;
+
+    border: 1px solid #e5e7eb;
+}
+
+.fontes-direitos-lista strong,
+.fontes-direitos-lista span {
+    display: block;
+}
+
+.fontes-direitos-lista span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+@media (max-width: 800px) {
+
+    .hero-direitos h1 {
+        font-size: 36px;
+    }
+
+    .direitos-intro,
+    .cards-direitos,
+    .principios-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fontes-direitos-lista {
+        flex-direction: column;
+    }
+
+}
+
+/* =========================
+   PÁGINA PROTESTOS
+========================= */
+
+.hero-protestos {
+    padding: 90px 8%;
+    background: linear-gradient(135deg, #172554, #1e3a8a);
+    color: white;
+}
+
+.hero-protestos span {
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-protestos h1 {
+    max-width: 850px;
+    font-size: 48px;
+    line-height: 1.15;
+    margin: 15px 0;
+}
+
+.hero-protestos p {
+    max-width: 760px;
+    font-size: 18px;
+    color: #dbeafe;
+}
+
+
+.protestos-intro {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.protestos-intro h2 {
+    font-size: 34px;
+    margin: 12px 0 20px;
+}
+
+.protestos-intro p {
+    color: #475569;
+    margin-bottom: 15px;
+}
+
+
+.destaque-protesto {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.07);
+}
+
+.destaque-protesto span {
+    font-size: 35px;
+}
+
+.destaque-protesto strong {
+    display: block;
+    font-size: 20px;
+    margin: 15px 0 8px;
+}
+
+.destaque-protesto p {
+    color: #64748b;
+}
+
+
+.cards-protestos {
+    max-width: 1100px;
+    margin: 0 auto 70px;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card-protesto {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.icone-protesto {
+    font-size: 32px;
+}
+
+.card-protesto h3 {
+    margin: 15px 0 10px;
+}
+
+.card-protesto p {
+    color: #64748b;
+}
+
+
+.linha-tempo-protestos {
+    background: white;
+    padding: 70px 8%;
+}
+
+
+.etapas-protesto {
+    max-width: 1100px;
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.etapa-protesto {
+    border-top: 3px solid #2563eb;
+    padding-top: 20px;
+}
+
+.etapa-protesto > strong {
+    color: #2563eb;
+    font-size: 14px;
+}
+
+.etapa-protesto h3 {
+    margin: 10px 0;
+}
+
+.etapa-protesto p {
+    color: #64748b;
+}
+
+
+.fontes-protestos {
+    max-width: 1050px;
+    margin: 60px auto;
+    padding: 0 25px;
+    text-align: center;
+}
+
+.fontes-protestos h2 {
+    font-size: 30px;
+}
+
+.fontes-protestos > p {
+    color: #64748b;
+    margin: 10px 0 30px;
+}
+
+.fontes-protestos-lista {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fontes-protestos-lista div {
+    background: white;
+    padding: 20px 30px;
+    border-radius: 12px;
+    min-width: 220px;
+    border: 1px solid #e5e7eb;
+}
+
+.fontes-protestos-lista strong,
+.fontes-protestos-lista span {
+    display: block;
+}
+
+.fontes-protestos-lista span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+@media (max-width: 800px) {
+
+    .hero-protestos h1 {
+        font-size: 36px;
+    }
+
+    .protestos-intro,
+    .cards-protestos,
+    .etapas-protesto {
+        grid-template-columns: 1fr;
+    }
+
+    .fontes-protestos-lista {
+        flex-direction: column;
+    }
+
+}
+css
+/* ========================================
+   GLOBO DOS PROTESTOS
+======================================== */
+
+.globo-protestos {
+    padding: 35px 20px 55px;
+    background: #03060d;
+    color: #ffffff;
+}
+
+.globo-cabecalho {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.globo-cabecalho span {
+    color: #2998ff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.globo-cabecalho h2 {
+    margin: 12px 0;
+    color: #f5f9ff;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.2;
+}
+
+.globo-cabecalho p {
+    max-width: 560px;
+    margin: 0 auto;
+    color: #9baec5;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* Área escura do globo */
+
+.globo-area {
+    position: relative;
+    width: 100%;
+    max-width: 1250px;
+    height: 680px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #03060d;
+    border-radius: 0;
+}
+
+#globo {
+    width: 100%;
+    height: 100%;
+}
+
+/* Painel de informações */
+
+.painel-protesto {
+    display: none;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    z-index: 5;
+    box-sizing: border-box;
+    width: min(330px, calc(100% - 48px));
+    padding: 26px;
+    border: 1px solid #263c57;
+    border-radius: 16px;
+    background: rgba(8, 17, 32, 0.96);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.4);
+}
+
+.painel-protesto.ativo {
+    display: block;
+}
+
+.painel-protesto h3 {
+    color: #ffffff;
+}
+
+.painel-protesto p {
+    color: #a9bad0;
+    line-height: 1.7;
+}
+
+.painel-tag {
+    color: #ff991f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#fechar-painel {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    width: 32px;
+    height: 32px;
+    border: 0;
+    border-radius: 50%;
+    background: #17263a;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .globo-protestos {
+        padding: 45px 12px;
+    }
+
+    .globo-area {
+        height: 520px;
+    }
+
+    .painel-protesto {
+        top: auto;
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        width: auto;
+    }
+}
+
+/* ========================================
+   GLOBO CIARTEC — REFERÊNCIA LITTLE FUJI
+======================================== */
+
+.globo-protestos {
+    position: relative;
+    height: 780px;
+    padding: 0;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+}
+
+.globo-marca {
+    position: absolute;
+    z-index: 3;
+    top: 24px;
+    left: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.globo-marca strong {
+    color: #168bff;
+    font-size: 34px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.globo-marca span {
+    color: #168bff;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.globo-instrucoes {
+    position: absolute;
+    z-index: 3;
+    top: 30px;
+    left: 27%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: #4386c9;
+    font-size: 14px;
+}
+
+.globo-area {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #000;
+}
+
+#globo {
+    width: 100%;
+    height: 100%;
+}
+
+/* Pins laranja */
+
+.pin-protesto {
+    width: 25px;
+    height: 31px;
+    cursor: pointer;
+    transform: translate(-50%, -90%);
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 0 5px rgba(255, 145, 0, 0.3));
+}
+
+.pin-protesto:hover {
+    transform: translate(-50%, -100%) scale(1.2);
+}
+
+.pin-protesto svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Painel de detalhes */
+
+.painel-protesto {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    top: 100px;
+    right: 5%;
+    width: 290px;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid #1b3453;
+    border-radius: 14px;
+    background: rgba(5, 12, 25, 0.96);
+    box-shadow: 0 10px 35px #0008;
+}
+
+.painel-protesto.ativo {
+    display: block;
+}
+
+.painel-protesto h3 {
+    margin: 14px 0 8px;
+    color: white;
+}
+
+.painel-protesto p {
+    color: #a8bbd1;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.painel-tag {
+    color: #ff941f;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+#fechar-painel {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    border: 0;
+    background: transparent;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .globo-protestos {
+        height: 650px;
+    }
+
+    .globo-marca {
+        top: 20px;
+        left: 20px;
+    }
+
+    .globo-marca strong {
+        font-size: 27px;
+    }
+
+    .globo-instrucoes {
+        top: 100px;
+        left: 20px;
+        font-size: 12px;
+    }
+
+    .painel-protesto {
+        top: auto;
+        right: 15px;
+        bottom: 15px;
+        left: 15px;
+        width: auto;
+    }
+}
+.painel-protesto.ativo {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    z-index: 9999 !important;
+}
+
+#texto-ponto {
+    color: #d6e3f3;
+    font-size: 14px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#texto-ponto a {
+    display: inline-block;
+    margin-top: 12px;
+}
+
+
+/* ========================================
+   NAVEGAÇÃO LATERAL — BOTÕES
+======================================== */
+
+
+/* Remove o contorno extra de Rotas de Migração */
+#botao-rotas.sidebar-item:hover {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Foco visível pelo teclado */
+#botao-rotas.sidebar-item:focus-visible,
+#botao-fronteiras.sidebar-item:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+
+/* Mantém a aparência consistente ao passar o mouse */
+#botao-fronteiras.sidebar-item:hover {
+    font: inherit;
+}
+
+/* Mantém o destaque com o mesmo espaço interno */
+#botao-fronteiras.sidebar-item:focus-visible {
+    outline: 2px solid var(--destaque);
+    outline-offset: 2px;
+}
+
+/* Igualar o hover de Rotas de Migração ao de Fronteiras e Muros */
+#botao-rotas:hover {
+    background-color: #0c9eae;
+    border: 1px solid transparent;
+    box-shadow: none;
+    outline: none;
+}
+
+/* ========================================
+   INTERATIVIDADE — MENU LATERAL
+======================================== */
+
+.sidebar-item {
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        border-color 0.25s ease;
+
+    transform-origin: left center;
+}
+
+/* Efeito ao passar o mouse */
+.sidebar-item:hover {
+    background-color: #0c9eae;
+    color: #ffffff;
+    transform: scale(1.03);
+    border-color: transparent;
+    box-shadow: none;
+}
+
+/* Mantém o botão ativo destacado */
+.sidebar-item.ativo,
+.sidebar-item.ativo-rotas {
+    background-color: #0c9eae;
+    color: #ffffff;
+}
+
+/* Acessibilidade: foco pelo teclado */
+.sidebar-item:focus-visible {
+    outline: 2px solid #65d9e8;
+    outline-offset: 2px;
+}
+
+/* Tira o contorno que aparece só por clicar com o mouse */
+.sidebar-item:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Contorno para quem navega pelo teclado */
+.sidebar-item:focus-visible {
+    outline: 2px solid #0e9aae;
+    outline-offset: 2px;
+}
+
+/* Visual de "ligado" nos botões Rotas e Fronteiras */
+.sidebar-item[aria-pressed="true"] {
+    border: 1px solid #0e9aae;
+    background: rgba(14, 154, 174, 0.15);
+}
+
+header nav {
+    margin-left: auto !important;
+    margin-right: 30px !important;
+}
+
+/* Card Protestos — mesmo padrão dos outros cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 238px;
+    box-sizing: border-box;
+}
+
+.card h3 {
+    color: #111827;
+    font-size: 21px;
+    margin: 18px 0 10px;
+}
+
+.card p {
+    color: #526783;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 20px;
+}
+
+.card a {
+    color: #16839a;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.card-icon {
+    font-size: 28px;
+    margin-bottom: 2px;
+}
+
+.areas {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.areas .area {
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.categorias,
+.areas {
+    display: grid !important;
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 20px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.card,
+.areas .area {
+    background-color: #ffffff;
+    border: 1px solid rgba(23, 23, 23, 0.15);
+    border-radius: 16px;
+    padding: 30px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column; /* Deixa ícone, título, texto e link empilhados */
+    align-items: flex-start;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+}
+
+/* Fixa o link "Explorar" sempre na base do card */
+.card a {
+    margin-top: auto;
+    color: var(--destaque);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 900px) {
+    .categorias,
+    .areas {
+        grid-template-columns: repeat(2, 1fr) !important; /* 2 colunas em tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .categorias,
+    .areas {
+        grid-template-columns: 1fr !important; /* 1 coluna em celulares */
+    }
+}

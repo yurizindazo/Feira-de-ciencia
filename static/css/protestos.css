@@ -1,0 +1,972 @@
+
+/* ========================================
+   IDENTIDADE VISUAL — CIARTEC | PROTESTOS
+======================================== */
+
+:root {
+    --agua-clara: #a3f2f7;
+    --agua-media: #81bed1;
+    --agua: #4191a5;
+    --verde-agua: #43e3ff;
+    --verde: #078da3;
+    --verde-escuro: #064547;
+    --verde-profundo: #043544;
+    --texto: #254e5c;
+    --texto-suave: #426b78;
+}
+
+
+/* ========================================
+   HERO — DESTAQUE INICIAL
+======================================== */
+
+.hero-protestos {
+    position: relative;
+    min-height: 480px;
+    padding: 85px 8%;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: linear-gradient(
+        120deg,
+        #043544,
+        #075b68 55%,
+        #16899a
+    );
+
+    color: white;
+}
+
+.hero-conteudo {
+    position: relative;
+    z-index: 1;
+    max-width: 950px;
+}
+
+.hero-tag {
+    display: inline-block;
+    margin-bottom: 24px;
+
+    color: #73f6ff;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-protestos h1 {
+    max-width: 900px;
+    margin-bottom: 24px;
+
+    color: #ffffff;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.12;
+}
+
+.hero-protestos h1 span {
+    display: block;
+    color: #73f6ff;
+}
+
+.hero-protestos p {
+    max-width: 650px;
+
+    color: #cbdde5;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-indicador {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 35px;
+
+    color: #73f6ff;
+
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.8px;
+}
+
+.hero-indicador span {
+    width: 32px;
+    height: 2px;
+    background: #43e3ff;
+}
+
+
+/* ========================================
+   INTRODUÇÃO
+======================================== */
+
+.pagina-intro {
+    min-height: 65vh;
+    padding: 120px 8%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: var(--agua-clara);
+}
+
+.pagina-intro h2 {
+    max-width: 950px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.98;
+
+    margin-bottom: 35px;
+
+    color: var(--verde-escuro);
+}
+
+.pagina-intro > p:last-child {
+    max-width: 650px;
+
+    font-size: 18px;
+    line-height: 1.8;
+
+    color: var(--texto-suave);
+}
+
+
+/* ========================================
+   CONTEÚDO
+======================================== */
+
+.conteudo {
+    padding: 100px 8%;
+    background: #ffffff;
+}
+
+.conteudo h2 {
+    max-width: 850px;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 1.05;
+
+    margin-bottom: 30px;
+
+    color: var(--verde-escuro);
+}
+
+.conteudo > p {
+    max-width: 700px;
+
+    color: var(--texto-suave);
+    line-height: 1.8;
+}
+
+
+/* ========================================
+   SEÇÕES DOS GLOBOS
+======================================== */
+
+.secao-mobilizacao {
+    padding: 100px 8% 75px;
+    background: #a3e7eb;
+}
+
+.texto-mobilizacao {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+}
+
+.texto-mobilizacao > span {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    color: #078da3;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
+.texto-mobilizacao > span::before {
+    content: "";
+    display: inline-block;
+
+    width: 28px;
+    height: 2px;
+
+    background: #43cbd9;
+}
+
+.texto-mobilizacao h2 {
+    max-width: 850px;
+
+    margin: 20px 0 22px;
+
+    color: #064547;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(36px, 5vw, 58px);
+    line-height: 1.1;
+    letter-spacing: -1px;
+}
+
+.texto-mobilizacao p {
+    max-width: 750px;
+
+    color: #426b78;
+
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.secao-positiva {
+    border-top: 1px solid #7bcbd3;
+    background: #a3e7eb;
+}
+
+.secao-negativa {
+    border-top: 1px solid #70c1cc;
+    background: #b8e8e9;
+}
+
+.secao-exclusao {
+    border-top: 1px solid #70c1cc;
+}
+
+
+/* ========================================
+   ÁREA DOS GLOBOS
+   MANTIDA — NÃO ALTERAR
+======================================== */
+
+.globo-protestos {
+    position: relative;
+    width: 100%;
+    height: 620px;
+    min-height: 620px;
+    margin-top: 30px;
+    overflow: hidden;
+
+    border-radius: 24px;
+    background: radial-gradient(
+        circle at center,
+        #245c56,
+        #153d3b 65%,
+        #102c2e
+    );
+
+    border: 1px solid rgba(65, 151, 133, 0.3);
+    box-shadow: 0 22px 55px rgba(25, 83, 72, 0.15);
+}
+
+.globo-area {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    overflow: hidden;
+    border-radius: 24px;
+}
+
+#globo-direitos,
+#globo-exclusao {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+}
+
+/* Evita que o conteúdo interno do Globe ultrapasse a área */
+
+.globo-area canvas {
+    display: block;
+}
+
+
+/* ========================================
+   IDENTIFICAÇÃO DOS GLOBOS
+======================================== */
+
+.globo-marca {
+    position: absolute;
+    z-index: 2;
+    top: 25px;
+    left: 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    color: #effff9;
+    pointer-events: none;
+}
+
+.globo-marca strong {
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+
+.globo-marca span {
+    font-size: 10px;
+    letter-spacing: 1.8px;
+    opacity: 0.75;
+}
+
+.globo-instrucoes {
+    position: absolute;
+    z-index: 2;
+    bottom: 25px;
+    left: 28px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    padding: 12px 16px;
+    border: 1px solid rgba(210, 255, 239, 0.15);
+    border-radius: 12px;
+
+    background: rgba(13, 48, 45, 0.65);
+    backdrop-filter: blur(10px);
+
+    color: #eafff7;
+    font-size: 11px;
+    opacity: 0.9;
+    pointer-events: none;
+}
+
+
+/* ========================================
+   MARCADORES DOS ACONTECIMENTOS
+======================================== */
+
+.pin-protesto {
+    width: 26px;
+    height: 32px;
+    cursor: pointer;
+    transform-origin: bottom center;
+    transition: transform 0.2s ease;
+    filter: drop-shadow(0 0 5px rgba(183, 255, 229, 0.4));
+}
+
+.pin-protesto:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0 0 9px rgba(210, 255, 239, 0.85));
+}
+
+.pin-protesto svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* ========================================
+   PAINEL DE INFORMAÇÕES
+======================================== */
+
+.painel-protesto {
+    display: none;
+    position: absolute;
+    z-index: 20;
+    top: 22px;
+    right: 22px;
+
+    width: min(350px, calc(100% - 44px));
+    max-height: calc(100% - 44px);
+    overflow-y: auto;
+
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 18px;
+
+    background: rgba(239, 250, 247, 0.97);
+    color: #bceff0;
+
+    box-shadow: 0 15px 40px rgba(8, 65, 56, 0.3);
+    backdrop-filter: blur(14px);
+}
+
+.painel-protesto.ativo {
+    display: block;
+}
+
+.painel-protesto h3 {
+    margin: 12px 30px 16px 0;
+    color: #43cbd9;
+
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 21px;
+    line-height: 1.35;
+}
+
+.painel-tag {
+    color: #73f6ff;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.fechar-painel {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+
+    border: none;
+    background: transparent;
+    color: #73f6ff;
+
+    font-size: 26px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.fechar-painel:hover {
+    transform: rotate(90deg);
+}
+/* ========================================
+   INFORMAÇÕES DOS ACONTECIMENTOS
+======================================== */
+
+.identificacao-evento {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 14px 0 20px;
+}
+
+.identificacao-evento span {
+    padding: 7px 11px;
+    border: 1px solid #43aebc;
+    border-radius: 20px;
+    background: #17616b;
+    color: #e2ffff;
+
+    font-size: 11px;
+}
+
+.informacao-evento {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    margin: 15px 0;
+    padding-bottom: 13px;
+
+    border-bottom: 1px solid #397b83;
+    line-height: 1.6;
+}
+
+.informacao-evento strong {
+    color: #73f6ff;
+    font-size: 13px;
+}
+
+.informacao-evento span {
+    color: #e0f6f7;
+    font-size: 13px;
+}
+
+.texto-ponto {
+    color: #e0f6f7;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.texto-ponto a {
+    color: #73f6ff;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.texto-ponto a:hover {
+    text-decoration: underline;
+}
+
+
+/* ========================================
+   LINK DA FONTE
+======================================== */
+
+.link-fonte-evento {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+
+    border: 1px solid #43e3ff;
+    border-radius: 8px;
+
+    color: #73f6ff;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.link-fonte-evento:hover {
+    background: #16899a;
+    color: white;
+}
+
+/* ========================================
+   LINK DA FONTE
+======================================== */
+
+.link-fonte-evento {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 14px;
+
+    border: 1px solid var(--verde);
+    border-radius: 8px;
+
+    color: var(--verde-escuro);
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.link-fonte-evento:hover {
+    background: var(--verde);
+    color: white;
+}
+
+
+/* ========================================
+   IMAGENS DOS ACONTECIMENTOS
+======================================== */
+
+.imagem-protesto {
+    display: block;
+    width: 100%;
+    height: 180px;
+    margin-bottom: 15px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 12px;
+}
+
+.observacao-imagem {
+    margin: -5px 0 15px;
+    color: #718c83;
+    font-size: 11px;
+    font-style: italic;
+    line-height: 1.5;
+    text-align: center;
+}
+
+
+/* ========================================
+   CONTEÚDO ABAIXO DOS GLOBOS
+======================================== */
+
+.protestos-intro {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 55px;
+    align-items: center;
+
+    padding: 100px 8%;
+
+    background: #e4f8f8;
+}
+
+.protestos-intro .tag {
+    color: #078da3;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.protestos-intro h2 {
+    margin: 18px 0;
+    max-width: 700px;
+
+    color: #064547;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(35px, 4vw, 52px);
+    line-height: 1.15;
+}
+
+.protestos-intro p {
+    max-width: 680px;
+    margin-bottom: 14px;
+
+    color: #426b78;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.destaque-protesto {
+    padding: 35px;
+
+    background: #064547;
+    border-radius: 16px;
+
+    color: white;
+    box-shadow: 0 12px 30px #06454720;
+}
+
+.destaque-protesto > span {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+
+.destaque-protesto strong {
+    display: block;
+    margin-bottom: 12px;
+    font-size: 21px;
+}
+
+.destaque-protesto p {
+    color: #cbdde5;
+    font-size: 14px;
+}
+
+
+/* CARDS */
+
+.cards-protestos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    padding: 30px 8% 100px;
+    background: #e4f8f8;
+}
+
+.card-protesto {
+    padding: 30px;
+
+    background: white;
+    border: 1px solid #d3eeee;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px #0645470a;
+    transition: 0.25s ease;
+}
+
+.card-protesto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 28px #06454718;
+}
+
+.card-protesto > span {
+    display: block;
+    margin-bottom: 22px;
+    font-size: 30px;
+}
+
+.card-protesto h3 {
+    margin-bottom: 12px;
+    color: #064547;
+    font-size: 19px;
+}
+
+.card-protesto p {
+    color: #657f89;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* LINHA DO TEMPO */
+
+.linha-tempo-protestos {
+    padding: 100px 8%;
+    background: #ffffff;
+}
+
+.linha-tempo-protestos > span {
+    color: #078da3;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.linha-tempo-protestos h2 {
+    margin: 15px 0;
+    color: #064547;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(35px, 4vw, 52px);
+}
+
+.linha-tempo-protestos > p {
+    max-width: 650px;
+    margin-bottom: 50px;
+    color: #657f89;
+    line-height: 1.8;
+}
+
+.etapas-protesto {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.etapa-protesto {
+    padding: 25px 20px;
+    border-top: 3px solid #43cbd9;
+    background: #effafa;
+    border-radius: 0 0 12px 12px;
+}
+
+.etapa-protesto > span {
+    color: #078da3;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.etapa-protesto h3 {
+    margin: 15px 0 10px;
+    color: #064547;
+    font-size: 18px;
+}
+
+.etapa-protesto p {
+    color: #657f89;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+
+/* FONTES */
+
+.fontes-protestos {
+    padding: 65px 8%;
+    background: #043544;
+    color: white;
+}
+
+.fontes-protestos h2 {
+    margin-bottom: 12px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 32px;
+}
+
+.fontes-protestos p {
+    max-width: 650px;
+    margin-bottom: 22px;
+    color: #cbdde5;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* RESPONSIVIDADE DO CONTEÚDO */
+
+@media (max-width: 800px) {
+    .protestos-intro {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .cards-protestos {
+        grid-template-columns: 1fr;
+    }
+
+    .etapas-protesto {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 500px) {
+    .protestos-intro,
+    .linha-tempo-protestos {
+        padding: 65px 7%;
+    }
+
+    .cards-protestos {
+        padding: 20px 7% 65px;
+    }
+
+    .etapas-protesto {
+        grid-template-columns: 1fr;
+    }
+
+    .fontes-protestos {
+        padding: 50px 7%;
+    }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 800px) {
+
+    .pagina-intro {
+        min-height: auto;
+        padding: 90px 7%;
+    }
+
+    .conteudo {
+        padding: 75px 7%;
+    }
+
+    .secao-mobilizacao {
+        padding: 65px 7%;
+    }
+
+    .globo-protestos {
+        height: 550px;
+        min-height: 550px;
+    }
+
+    .painel-protesto {
+        width: min(320px, calc(100% - 30px));
+        right: 15px;
+        top: 65px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-protestos {
+        min-height: 420px;
+        padding: 75px 7%;
+    }
+
+    .hero-protestos h1 {
+        font-size: clamp(38px, 10vw, 54px);
+    }
+
+    .hero-protestos p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .pagina-intro {
+        padding: 75px 7%;
+    }
+
+    .pagina-intro h2 {
+        font-size: clamp(42px, 12vw, 60px);
+    }
+
+    .conteudo {
+        padding: 65px 7%;
+    }
+
+    .secao-mobilizacao {
+        padding: 55px 6%;
+    }
+
+    .texto-mobilizacao h2 {
+        font-size: clamp(32px, 9vw, 44px);
+    }
+
+    .globo-protestos {
+        height: 480px;
+        min-height: 480px;
+        border-radius: 16px;
+    }
+
+    .globo-area {
+        border-radius: 16px;
+    }
+
+    .globo-marca {
+        top: 17px;
+        left: 16px;
+    }
+
+    .globo-marca strong {
+        font-size: 15px;
+    }
+
+    .globo-instrucoes {
+        left: 12px;
+        bottom: 12px;
+        padding: 9px 12px;
+        font-size: 10px;
+    }
+
+    .painel-protesto {
+        top: 60px;
+        right: 10px;
+        width: calc(100% - 20px);
+        max-height: calc(100% - 110px);
+        padding: 20px;
+    }
+}
+
+/* FONTES — ORGANIZAÇÃO VISUAL */
+
+.fontes-conteudo > span {
+    color: #73f6ff;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.fontes-conteudo h2 {
+    margin-top: 15px;
+}
+
+.fontes-protestos-lista {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+}
+
+.fontes-protestos-lista > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 25px;
+
+    background: #0b4653;
+    border: 1px solid #286675;
+    border-radius: 12px;
+}
+
+.fontes-protestos-lista strong {
+    color: #73f6ff;
+    font-size: 21px;
+}
+
+.fontes-protestos-lista span {
+    color: #cbdde5;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.fontes-protestos-lista a {
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.fontes-protestos-lista a:hover {
+    color: #73f6ff;
+}
+
+@media (max-width: 700px) {
+    .fontes-protestos-lista {
+        grid-template-columns: 1fr;
+    }
+}
+

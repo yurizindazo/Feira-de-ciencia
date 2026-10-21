@@ -1,0 +1,891 @@
+
+/* ========================================
+   CONFIGURAÇÕES GERAIS
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #a5f0f4;
+    color: #173b43;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* ========================================
+   CABEÇALHO
+======================================== */
+
+.cabecalho {
+    background: #064b50;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+.logo strong {
+    color: white;
+    font-size: 25px;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #c4e7e9;
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #73e8ef;
+}
+
+
+/* ========================================
+   CAPA PRINCIPAL
+======================================== */
+
+.hero-refugiados {
+    min-height: 580px;
+    padding: 90px 8%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background: #064b50;
+    color: white;
+}
+
+
+.hero-refugiados::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background-image:
+        linear-gradient(
+            90deg,
+            #064b50 0%,
+            rgba(6,75,80,.95) 15%,
+            rgba(6,75,80,.75) 35%,
+            rgba(6,75,80,.30) 65%,
+            rgba(6,75,80,.10) 100%
+        ),
+        url("/static/imagens/refugiados.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.subtitulo {
+    color: #e8b99b;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.hero-refugiados h1 {
+    max-width: 570px;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.08;
+    font-weight: normal;
+    margin: 25px 0;
+}
+
+.hero-refugiados p {
+    max-width: 460px;
+    color: #e2e5df;
+    font-size: 17px;
+    margin-bottom: 28px;
+}
+
+.botao-hero {
+    display: inline-block;
+    background: #a5f0f4;
+    color: #064b50;
+    padding: 13px 23px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.botao-hero:hover {
+    background: white;
+    transform: translateY(-3px);
+}
+
+
+/* ========================================
+   TÍTULOS DAS SEÇÕES
+======================================== */
+
+.titulo-secao {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+.titulo-secao span,
+.tag {
+    color: #087e9a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.titulo-secao h2 {
+    font-size: 34px;
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.titulo-secao p {
+    color: #64748b;
+}
+
+
+/* ========================================
+   CONCEITO
+======================================== */
+
+.conceito {
+    max-width: 1100px;
+    margin: 75px auto;
+    padding: 0 25px;
+    display: grid;
+    grid-template-columns: 1.7fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.texto-conceito h2 {
+    font-size: 38px;
+    margin: 12px 0 20px;
+}
+
+.texto-conceito p {
+    color: #475569;
+    margin-bottom: 15px;
+    max-width: 650px;
+}
+
+.destaque-conceito {
+    background: #064b50;
+    color: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0,0,0,.1);
+}
+
+.icone-grande {
+    font-size: 45px;
+}
+
+.destaque-conceito h3 {
+    font-size: 23px;
+    margin: 15px 0 8px;
+}
+
+.destaque-conceito p {
+    color: #d5eeee;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   DIFERENÇAS
+======================================== */
+
+.diferencas {
+    background: #e8fbfc;
+    padding: 75px 7%;
+}
+
+.grade-diferencas {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card-diferenca {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #dcebed;
+    transition: .3s;
+}
+
+.card-diferenca:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,.07);
+}
+
+.card-diferenca > span {
+    font-size: 35px;
+}
+
+.card-diferenca h3 {
+    font-size: 21px;
+    margin: 15px 0 10px;
+}
+
+.card-diferenca p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.destaque-card {
+    background: #064b50;
+    color: white;
+}
+
+.destaque-card p {
+    color: #d5eeee;
+}
+
+
+/* ========================================
+   DADOS DO MUNDO
+======================================== */
+
+.dados-mundo {
+    padding: 80px 7%;
+    background: #a5f0f4;
+}
+
+.painel-dados {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.grupo-dados {
+    background: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.05);
+}
+
+.grupo-dados h3 {
+    font-size: 22px;
+}
+
+.descricao-dados {
+    font-size: 13px;
+    color: #64748b;
+    margin: 5px 0 25px;
+}
+
+.dado {
+    margin-bottom: 19px;
+}
+
+.dado-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 7px;
+    font-size: 14px;
+}
+
+.dado-info strong {
+    color: #087e9a;
+    white-space: nowrap;
+}
+
+.barra {
+    height: 9px;
+    background: #e5f2f3;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.barra div {
+    height: 100%;
+    background: #087e9a;
+    border-radius: 20px;
+}
+
+.observacao-dados {
+    text-align: center;
+    font-size: 12px;
+    color: #475569;
+    margin: 20px auto 0;
+}
+
+
+/* ========================================
+   CAUSAS
+======================================== */
+
+.causas {
+    background: #064b50;
+    color: white;
+    padding: 75px 7%;
+}
+
+.causas .titulo-secao span {
+    color: #a5f0f4;
+}
+
+.causas .titulo-secao h2 {
+    color: white;
+}
+
+.grade-causas {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.causa {
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 15px;
+    padding: 25px 15px;
+    text-align: center;
+    transition: .3s;
+}
+
+.causa:hover {
+    background: rgba(255,255,255,.17);
+    transform: translateY(-5px);
+}
+
+.causa span {
+    display: block;
+    font-size: 32px;
+    margin-bottom: 12px;
+}
+
+.causa strong {
+    font-size: 14px;
+}
+
+
+/* ========================================
+   DESAFIOS
+======================================== */
+
+.desafios {
+    padding: 80px 7%;
+    background: #e8fbfc;
+}
+
+.grade-desafios {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 17px;
+}
+
+.card-desafio {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 18px;
+    border: 1px solid #dcebed;
+    transition: .3s;
+}
+
+.card-desafio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+
+.card-desafio span {
+    font-size: 30px;
+}
+
+.card-desafio h3 {
+    margin: 12px 0 7px;
+    font-size: 17px;
+}
+
+.card-desafio p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+/* ========================================
+   ACOLHIMENTO
+======================================== */
+
+.acolhimento {
+    padding: 80px 7%;
+    background: #a5f0f4;
+}
+
+.grade-acolhimento {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+.item-acolhimento {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 22px;
+    border-radius: 15px;
+    transition: .3s;
+}
+
+.item-acolhimento:hover {
+    transform: translateX(5px);
+}
+
+.item-acolhimento > span {
+    min-width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e1f9fa;
+    border-radius: 13px;
+    font-size: 27px;
+}
+
+.item-acolhimento h3 {
+    font-size: 17px;
+    margin-bottom: 4px;
+}
+
+.item-acolhimento p {
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+/* ========================================
+   MENSAGEM FINAL
+======================================== */
+
+.mensagem-final {
+    background: #064b50;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.mensagem-final span {
+    color: #a5f0f4;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.mensagem-final h2 {
+    max-width: 750px;
+    margin: 20px auto;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 5vw, 48px);
+    line-height: 1.2;
+}
+
+.mensagem-final p {
+    max-width: 550px;
+    margin: auto;
+    color: #d5eeee;
+}
+
+
+/* ========================================
+   FONTES
+======================================== */
+
+.fontes {
+    padding: 60px 7%;
+    text-align: center;
+}
+
+.fontes h2 {
+    font-size: 29px;
+}
+
+.fontes > p {
+    color: #64748b;
+    margin: 10px 0 30px;
+}
+
+.fontes-lista {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.fontes-lista a {
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    background: white;
+    padding: 22px 30px;
+    border-radius: 13px;
+    border: 1px solid #dcebed;
+    transition: .3s;
+}
+
+.fontes-lista a:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.06);
+}
+
+.fontes-lista strong {
+    color: #087e9a;
+    font-size: 18px;
+}
+
+.fontes-lista span {
+    color: #64748b;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   RODAPÉ
+======================================== */
+
+footer {
+    background: #064b50;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+
+/* ========================================
+   TABLETS
+======================================== */
+
+@media (max-width: 950px) {
+
+    .grade-causas {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grade-desafios {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+
+/* ========================================
+   CELULARES
+======================================== */
+
+@media (max-width: 700px) {
+
+    .cabecalho {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 7%;
+    }
+
+    nav {
+        gap: 12px 18px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+    .hero-refugiados {
+        min-height: 680px;
+        padding: 300px 7% 55px;
+        justify-content: flex-end;
+    }
+
+    .hero-refugiados::after {
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 58%;
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(6,75,80,.05) 15%,
+                #064b50 100%
+            ),
+            url("/static/imagens/refugiados.jpg");
+
+        background-size: cover;
+        background-position: center;
+    }
+
+    .hero-refugiados h1 {
+        font-size: 43px;
+    }
+
+    .hero-refugiados p {
+        font-size: 15px;
+    }
+
+    .conceito {
+        margin: 50px auto;
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .texto-conceito h2 {
+        font-size: 30px;
+    }
+
+    .titulo-secao h2 {
+        font-size: 27px;
+    }
+
+    .grade-diferencas {
+        grid-template-columns: 1fr;
+    }
+
+    .painel-dados {
+        grid-template-columns: 1fr;
+    }
+
+    .grupo-dados {
+        padding: 23px 18px;
+    }
+
+    .grade-causas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grade-desafios {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grade-acolhimento {
+        grid-template-columns: 1fr;
+    }
+
+    .item-acolhimento {
+        gap: 13px;
+        padding: 17px;
+    }
+
+    .fontes-lista {
+        flex-direction: column;
+    }
+
+    .fontes-lista a {
+        min-width: 0;
+    }
+
+}
+
+
+/* ========================================
+   CELULARES PEQUENOS
+======================================== */
+
+@media (max-width: 400px) {
+
+    .hero-refugiados h1 {
+        font-size: 37px;
+    }
+
+    .grade-causas,
+    .grade-desafios {
+        grid-template-columns: 1fr;
+    }
+
+    .dado-info {
+        font-size: 12px;
+    }
+
+}
+
+
+/* ========================================
+   REFÚGIO NO BRASIL
+======================================== */
+
+.brasil-refugiados {
+    max-width: 1150px;
+    margin: 80px auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.imagem-brasil {
+    height: 420px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.imagem-brasil img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform .5s;
+}
+
+.imagem-brasil:hover img {
+    transform: scale(1.04);
+}
+
+.texto-brasil > span {
+    color: #087e9a;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.texto-brasil h2 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.texto-brasil > p {
+    color: #475569;
+    margin-bottom: 14px;
+}
+
+.curiosidade-brasil {
+    background: #064b50;
+    color: white;
+    padding: 22px;
+    border-radius: 15px;
+    margin-top: 25px;
+}
+
+.curiosidade-brasil strong {
+    color: #a5f0f4;
+    font-size: 18px;
+}
+
+.curiosidade-brasil p {
+    color: #e2eeee;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+
+/* ========================================
+   COMO AJUDAR
+======================================== */
+
+.como-ajudar {
+    background: #e8fbfc;
+    padding: 80px 7%;
+}
+
+.ajudas {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.ajuda {
+    background: white;
+    padding: 30px;
+    border-radius: 17px;
+    text-align: center;
+    transition: .3s;
+}
+
+.ajuda:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.07);
+}
+
+.ajuda span {
+    font-size: 38px;
+}
+
+.ajuda h3 {
+    margin: 15px 0 8px;
+}
+
+.ajuda p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE DAS NOVAS SEÇÕES
+======================================== */
+
+@media (max-width: 700px) {
+
+    .brasil-refugiados {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin: 50px auto;
+    }
+
+    .imagem-brasil {
+        height: 300px;
+    }
+
+    .texto-brasil h2 {
+        font-size: 30px;
+    }
+
+    .ajudas {
+        grid-template-columns: 1fr;
+    }
+
+}

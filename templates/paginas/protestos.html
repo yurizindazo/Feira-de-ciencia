@@ -1,0 +1,917 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Protestos | CIARTEC</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/protestos.css') }}">
+
+    <script src="https://unpkg.com/globe.gl"></script>
+
+    <style>
+       /* Área dos globos */
+        .globo-area {
+            position: relative;
+            width: 100%;
+            height: 620px;
+            min-height: 620px;
+            overflow: hidden;
+            margin: 0 auto;
+            border-radius: 20px;
+}
+
+#globo-direitos,
+#globo-exclusao {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 620px;
+}
+        /* Marcadores */
+        .pin-protesto {
+            width: 30px;
+            height: 36px;
+            cursor: pointer;
+            pointer-events: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .pin-protesto:hover {
+            transform: scale(1.3);
+        }
+
+        .pin-protesto svg {
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        /* Imagens dos protestos */
+        .imagem-protesto {
+        display: block;
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        }
+        .observacao-imagem {
+        font-size: 12px;
+        color: #aaa;
+        font-style: italic;
+        text-align: center;
+        line-height: 1.4;
+        margin: -5px 0 15px;
+        }
+
+        /* Painel */
+        .painel-protesto {
+            display: none;
+            position: absolute;
+            z-index: 20;
+            top: 20px;
+            right: 20px;
+            width: min(340px, calc(100% - 40px));
+            max-height: 85%;
+            overflow-y: auto;
+            padding: 25px;
+            border-radius: 15px;
+            background: rgba(15, 25, 35, 0.97);
+            color: white;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            box-sizing: border-box;
+        }
+
+        .painel-protesto.ativo {
+            display: block;
+        }
+
+        .fechar-painel {
+            position: absolute;
+            top: 8px;
+            right: 12px;
+            border: none;
+            background: transparent;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        .painel-tag {
+            display: block;
+            margin-bottom: 12px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #b7c5d3;
+        }
+
+        .titulo-ponto {
+            padding-right: 20px;
+            margin-bottom: 12px;
+            font-size: 21px;
+            line-height: 1.3;
+        }
+
+        .identificacao-evento {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 15px 0;
+        }
+
+        .identificacao-evento span {
+            padding: 6px 10px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.12);
+            font-size: 12px;
+        }
+
+        .informacao-evento {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            margin: 16px 0;
+            line-height: 1.5;
+        }
+
+        .informacao-evento strong {
+            font-size: 14px;
+        }
+
+        .informacao-evento span {
+            font-size: 13px;
+            color: #e0e0e0;
+        }
+
+        .link-fonte-evento {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 13px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .link-fonte-evento:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .globo-area {
+                min-height: 500px;
+            }
+
+            #globo-direitos,
+            #globo-exclusao {
+                height: 500px;
+            }
+
+            .painel-protesto {
+                top: 10px;
+                right: 10px;
+                width: calc(100% - 20px);
+                max-height: 75%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <div class="logo">
+        <strong>CIARTEC</strong>
+        <span>Migração, Refugiados e Direitos</span>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('inicio') }}">Início</a>
+        <a href="{{ url_for('migracao') }}">Migração</a>
+        <a href="{{ url_for('refugiados') }}">Refugiados</a>
+        <a href="{{ url_for('direitos') }}">Direitos</a>
+        <a href="{{ url_for('protestos') }}">Protestos</a>
+    </nav>
+
+</header>
+
+<main>
+
+<section class="hero-protestos">
+    <div class="hero-conteudo">
+
+        <span class="hero-tag">
+            CIARTEC / PROTESTOS E MOVIMENTOS
+        </span>
+
+        <h1>
+            Vozes que se unem.
+            <span>Direitos que transformam.</span>
+        </h1>
+
+        <p>
+            Conheça manifestações e movimentos sociais que
+            expressam a luta por direitos, justiça e mudanças
+            na sociedade, em diferentes partes do mundo.
+        </p>
+
+        <div class="hero-indicador">
+            <span></span>
+            EXPLORE AS MOBILIZAÇÕES PELO MUNDO
+        </div>
+
+    </div>
+</section>
+
+
+    <!-- GLOBO 1 -->
+
+    <section class="secao-mobilizacao secao-positiva">
+
+        <div class="texto-mobilizacao">
+            <span>01 • SOLIDARIEDADE E DIREITOS</span>
+
+            <h2>Quando a sociedade se une por direitos</h2>
+
+            <p>
+                Ao longo da história, pessoas e grupos se mobilizaram
+                para defender os direitos humanos, combater a
+                discriminação e exigir melhores condições de vida.
+                Essas manifestações mostram como a união coletiva
+                pode dar visibilidade a causas importantes e promover
+                mudanças sociais.
+            </p>
+        </div>
+
+        <section class="globo-protestos">
+
+            <div class="globo-marca">
+                <strong>CIARTEC</strong>
+                <span>MOBILIZAÇÕES EM DEFESA DOS DIREITOS</span>
+            </div>
+
+            <div class="globo-instrucoes">
+                <span>Arraste para girar o globo</span>
+                <span>Clique nos pins para explorar</span>
+            </div>
+
+            <div class="globo-area">
+                <div id="globo-direitos"></div>
+
+                <div class="painel-protesto" id="painel-direitos">
+                    <button class="fechar-painel" aria-label="Fechar">×</button>
+
+                    <span class="painel-tag">MAPA CIARTEC</span>
+
+                    <h3 class="titulo-ponto">Selecione uma mobilização</h3>
+
+                    <div class="texto-ponto">
+                        Clique em um marcador para ver os detalhes.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+    <!-- GLOBO 2 -->
+
+    <section class="secao-mobilizacao secao-negativa">
+
+        <div class="texto-mobilizacao">
+            <span>02 • EXCLUSÃO E DISCRIMINAÇÃO</span>
+
+            <h2>Quando a mobilização gera exclusão</h2>
+
+            <p>
+                Nem toda manifestação representa uma luta pela
+                igualdade. Algumas mobilizações defendem ideias
+                discriminatórias, incentivam a xenofobia ou rejeitam
+                os direitos de determinados grupos. Conhecer esses
+                movimentos também é importante para compreender
+                os desafios enfrentados por migrantes e refugiados.
+            </p>
+        </div>
+
+        <section class="globo-protestos globo-exclusao">
+
+            <div class="globo-marca">
+                <strong>CIARTEC</strong>
+                <span>MOBILIZAÇÕES E EPISÓDIOS DE EXCLUSÃO</span>
+            </div>
+
+            <div class="globo-instrucoes">
+                <span>Arraste para girar o globo</span>
+                <span>Clique nos pins para explorar</span>
+            </div>
+
+            <div class="globo-area">
+                <div id="globo-exclusao"></div>
+
+                <div class="painel-protesto" id="painel-exclusao">
+                    <button class="fechar-painel" aria-label="Fechar">×</button>
+
+                    <span class="painel-tag">MAPA CIARTEC</span>
+
+                    <h3 class="titulo-ponto">Selecione uma mobilização</h3>
+
+                    <div class="texto-ponto">
+                        Clique em um marcador para ver os detalhes.
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </section>
+
+   
+<!-- INTRODUÇÃO APÓS OS GLOBOS -->
+
+<section class="protestos-intro">
+
+    <div>
+        <span class="tag">O IMPACTO DA MOBILIZAÇÃO</span>
+
+        <h2>Quando muitas vozes se tornam impossíveis de ignorar.</h2>
+
+        <p>
+            Uma mobilização social nasce quando pessoas se unem
+            para dar visibilidade a situações que precisam de
+            atenção. Suas reivindicações podem envolver direitos,
+            igualdade, acolhimento e melhores condições de vida.
+        </p>
+
+        <p>
+            Por meio de manifestações, campanhas e outras formas
+            de participação, esses grupos levam suas demandas
+            ao debate público.
+        </p>
+    </div>
+
+    <div class="destaque-protesto">
+        <span>✊</span>
+        <strong>A força da participação</strong>
+        <p>
+            A participação coletiva ajuda a dar voz a diferentes
+            realidades e a manter questões sociais em discussão.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- PRINCIPAIS CARACTERÍSTICAS -->
+
+<section class="cards-protestos">
+
+    <div class="card-protesto">
+        <span class="icone-protesto">📢</span>
+        <h3>Dar visibilidade</h3>
+        <p>
+            Tornar públicos problemas e situações que muitas
+            vezes não recebem a atenção necessária.
+        </p>
+    </div>
+
+    <div class="card-protesto">
+        <span class="icone-protesto">🤝</span>
+        <h3>Unir pessoas</h3>
+        <p>
+            Reunir indivíduos e organizações em torno de
+            objetivos e reivindicações em comum.
+        </p>
+    </div>
+
+    <div class="card-protesto">
+        <span class="icone-protesto">🌍</span>
+        <h3>Defender direitos</h3>
+        <p>
+            Debater questões como migração, dignidade,
+            igualdade e proteção dos direitos humanos.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- ETAPAS DA MOBILIZAÇÃO -->
+
+<section class="linha-tempo-protestos">
+
+    <div class="titulo-secao">
+        <span>ENTENDA O PROCESSO</span>
+
+        <h2>Da reivindicação à ação coletiva.</h2>
+
+        <p>
+            As mobilizações podem assumir diferentes formas,
+            mas geralmente envolvem algumas etapas de organização
+            e participação.
+        </p>
+    </div>
+
+    <div class="etapas-protesto">
+
+        <div class="etapa-protesto">
+            <strong>01</strong>
+            <h3>Identificação</h3>
+            <p>
+                Uma situação ou problema passa a ser reconhecido
+                como algo que precisa de atenção.
+            </p>
+        </div>
+
+        <div class="etapa-protesto">
+            <strong>02</strong>
+            <h3>Articulação</h3>
+            <p>
+                Pessoas e organizações compartilham ideias
+                e planejam formas de agir.
+            </p>
+        </div>
+
+        <div class="etapa-protesto">
+            <strong>03</strong>
+            <h3>Ação coletiva</h3>
+            <p>
+                As reivindicações ganham espaço por meio
+                de atos, campanhas e manifestações.
+            </p>
+        </div>
+
+        <div class="etapa-protesto">
+            <strong>04</strong>
+            <h3>Repercussão</h3>
+            <p>
+                As demandas podem ampliar discussões
+                e influenciar decisões na sociedade.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FONTES E REFERÊNCIAS -->
+
+<section class="fontes-protestos">
+
+    <div class="fontes-conteudo">
+
+        <span>PARA SABER MAIS</span>
+
+        <h2>Conhecimento também transforma.</h2>
+
+        <p>
+            Consulte organizações que trabalham com direitos
+            humanos, proteção de refugiados e questões migratórias
+            para aprofundar os temas apresentados nesta página.
+        </p>
+
+        <div class="fontes-protestos-lista">
+
+            <div>
+                <strong>ONU</strong>
+                <span>Direitos humanos e questões globais</span>
+                <a href="https://www.un.org/pt/" target="_blank" rel="noopener noreferrer">
+                    Acessar site →
+                </a>
+            </div>
+
+            <div>
+                <strong>ACNUR</strong>
+                <span>Refugiados e proteção internacional</span>
+                <a href="https://www.acnur.org/br/" target="_blank" rel="noopener noreferrer">
+                    Acessar site →
+                </a>
+            </div>
+
+            <div>
+                <strong>OIM</strong>
+                <span>Migração e mobilidade humana</span>
+                <a href="https://brazil.iom.int/pt-br" target="_blank" rel="noopener noreferrer">
+                    Acessar site →
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+<footer>
+    <p>Projeto CIARTEC — Migração, Refugiados e Direitos Humanos</p>
+</footer>
+
+<script>
+    // ==========================================
+    // DADOS DO GLOBO 1 — DEFESA DOS DIREITOS
+    // ==========================================
+
+    const pontosDireitos = [
+        {
+            lat: -23.55,
+            lng: -46.63,
+            nome: "Marcha dos Imigrantes",
+            pais: "Brasil",
+            data: "1 de dezembro de 2024",
+            imagem: "marcha_imigrantes.webp",
+            participantes: "Migrantes, organizações e apoiadores",
+            motivo: "Defesa da migração como um direito humano e de políticas de acolhimento.",
+            consequencia: "A mobilização deu visibilidade às reivindicações dos migrantes.",
+            fonte: "https://www.cut.org.br/"
+        },
+        {
+            lat: 52.52,
+            lng: 13.405,
+            nome: "Manifestação #unteilbar",
+            pais: "Alemanha",
+            data: "13 de outubro de 2018",
+            imagem: "unteilbar.jpg",
+            participantes: "Organizações sociais e milhares de manifestantes",
+            motivo: "Combate ao racismo e à exclusão e defesa de uma sociedade solidária.",
+            consequencia: "A mobilização ampliou a visibilidade pública dessas reivindicações.",
+            fonte: "https://www.unteilbar.org/aktionen/unteilbar-2018/"
+        },
+        {
+            lat: 48.857,
+            lng: 2.352,
+            nome: "Ato de apoio aos refugiados em Paris",
+            pais: "França",
+            data: "5 de setembro de 2015",
+            imagem: "apoio_paris.jpeg",
+            participantes: "Manifestantes e apoiadores dos refugiados",
+            motivo: "Demonstrar solidariedade com migrantes e refugiados.",
+            consequencia: "O ato tornou pública a mobilização por acolhimento.",
+            fonte: "https://www.lemonde.fr/societe/article/2015/09/05/plusieurs-milliers-de-personnes-rassembles-place-de-la-republique-a-paris-en-soutien-aux-migrants_4746962_3224.html"
+        },
+        {
+            lat: 51.507,
+            lng: -0.128,
+            nome: "Marcha Refugees Welcome",
+            pais: "Reino Unido",
+            data: "12 de setembro de 2015",
+            imagem: "refugees_welcome.webp",
+            participantes: "Manifestantes e organizações de apoio aos refugiados",
+            motivo: "Defesa de maior acolhimento e proteção humanitária.",
+            consequencia: "A marcha ampliou a visibilidade da demanda por acolhimento.",
+            fonte: "https://www.theguardian.com/world/2015/sep/12/refugees-welcome-uk-marchers-un-warns-war-syria-million-displaced"
+        },
+        {
+            lat: 60.17,
+            lng: 24.94,
+            nome: "Movimento Oikeus elää",
+            pais: "Finlândia",
+            data: "Dezembro de 2016",
+            imagem: "finlandia_asilo.jpg",
+            participantes: "Solicitantes de asilo e apoiadores",
+            motivo: "Contestação das deportações e defesa dos direitos dos solicitantes de asilo.",
+            consequencia: "A mobilização tornou públicas as preocupações dos solicitantes de asilo.",
+            fonte: "https://yle.fi/a/3-9333061"
+        },
+        {
+            lat: 19.43,
+            lng: -99.13,
+            nome: "Caravana migrante",
+            pais: "México",
+            data: "Outubro de 2018",
+            imagem: "caravana_mexico.webp",
+            participantes: "Migrantes de diferentes nacionalidades",
+            motivo: "Busca por proteção e melhores condições durante o deslocamento.",
+            consequencia: "A mobilização coletiva chamou atenção para as dificuldades enfrentadas durante a travessia.",
+            fonte: "https://www.unhcr.org/"
+        },
+        {
+            lat: 30.05,
+            lng: 31.23,
+            nome: "Protesto de refugiados sudaneses no Cairo",
+            pais: "Egito",
+            data: "Setembro a dezembro de 2005",
+            imagem: "sudanenses_cairo.jpg",
+            observacao: "A qualidade da imagem está relacionada à época em que foi registrada, há aproximadamente 21 anos.",
+            participantes: "Refugiados e solicitantes de asilo sudaneses",
+            motivo: "Reivindicação por melhores condições de vida e reassentamento em outros países.",
+            consequencia: "O protesto terminou em uma operação policial violenta, com mortos e feridos.",
+            fonte: "https://www.unhcr.org/node/9287"
+        },
+        {
+            lat: 32.89,
+            lng: 13.19,
+            nome: "Protesto de refugiados em Trípoli",
+            pais: "Líbia",
+            data: "Outubro de 2021",
+            imagem: "refugiados_tripoli.jpg",
+            participantes: "Refugiados e solicitantes de asilo",
+            motivo: "Pedido de evacuação e reassentamento em locais seguros.",
+            consequencia: "O episódio chamou atenção para a situação dos refugiados e solicitantes de asilo na Líbia.",
+            fonte: "https://www.unhcr.org/news/news-releases/unhcr-appeals-end-arrests-asylum-seekers-libya-calls-urgent-resumption"
+        }
+    ];
+
+    // ==========================================
+    // DADOS DO GLOBO 2 — EXCLUSÃO
+    // ==========================================
+
+    const pontosExclusao = [
+        {
+            lat: 4.48,
+            lng: -61.14,
+            nome: "Ataque contra migrantes venezuelanos em Pacaraima",
+            pais: "Brasil",
+            data: "18 de agosto de 2018",
+            imagem: "protesto_pacaraima.webp",
+            participantes: "Moradores envolvidos em uma ação coletiva hostil",
+            motivo: "Reação violenta contra venezuelanos após tensões locais.",
+            consequencia: "Abrigos e pertences de migrantes foram atacados. O episódio foi marcado por hostilidade xenofóbica.",
+            fonte: "https://www.bbc.com/portuguese/brasil-45242682"
+        },
+        {
+            lat: 36.97,
+            lng: 27.30,
+            nome: "Menino sírio encontrado morto em uma praia da Turquia",
+            pais: "Turquia",
+            data: "2 de setembro de 2015",
+            imagem: "alan_kurdi.jpg",
+            participantes: "Alan Kurdi (de 5 anos), sua família e outros refugiados sírios.",
+            motivo: "Fugir da guerra na Síria e buscar segurança na Europa.",
+            consequencia: "O barco naufragou durante a travessia da Turquia para a Grécia.",
+            fonte: "A história por trás da foto do menino sírio que chocou o mundo"
+        },
+        {
+            lat: 52.52,
+            lng: 13.405,
+            nome: "Manifestações do movimento PEGIDA",
+            pais: "Alemanha",
+            data: "2015",
+            imagem: "pegida.webp",
+            participantes: "Apoiadores do movimento PEGIDA",
+            motivo: "Oposição à imigração e às políticas de acolhimento.",
+            consequencia: "As manifestações ampliaram o debate público sobre imigração e xenofobia.",
+            fonte: "https://www.bbc.com/news/world-europe-30776182"
+        },
+        {
+            lat: 50.075,
+            lng: 14.437,
+            nome: "Manifestação contra refugiados em Praga",
+            pais: "República Tcheca",
+            data: "17 de outubro de 2015",
+            imagem: "praga.webp",
+            participantes: "Manifestantes contrários à recepção de refugiados",
+            motivo: "Oposição à chegada e ao acolhimento de refugiados.",
+            consequencia: "O ato expressou a resistência de grupos à política europeia de acolhimento.",
+            fonte: "https://www.reuters.com/"
+        },
+        {
+            lat: -26.204,
+            lng: 28.047,
+            nome: "Marcha contra estrangeiros",
+            pais: "África do Sul",
+            data: "Agosto de 2018",
+            imagem: "marcha_estrangeiros.webp",
+            participantes: "Manifestantes contrários à presença de estrangeiros",
+            motivo: "Protestos relacionados à presença de imigrantes no país.",
+            consequencia: "O episódio ocorreu em um contexto de tensões e hostilidade contra estrangeiros.",
+            fonte: "https://www.reuters.com/"
+        },
+        {
+            lat: 53.43,
+            lng: -1.36,
+            nome: "Tumultos anti-imigração em Rotherham",
+            pais: "Reino Unido",
+            data: "Agosto de 2024",
+            imagem: "rotherham.avif",
+            participantes: "Grupos envolvidos nos tumultos",
+            motivo: "Hostilidade contra imigrantes e solicitantes de asilo.",
+            consequencia: "Os episódios envolveram violência e ataques em meio a manifestações anti-imigração.",
+            fonte: "https://www.bbc.com/news"
+        },
+        {
+            lat: 52.07,
+            lng: 5.12,
+            nome: "Protestos contra centros de acolhimento",
+            pais: "Países Baixos",
+            data: "Dezembro de 2015",
+            imagem: "paises_baixos.jpg",
+            participantes: "Moradores e manifestantes contrários à instalação de um centro de acolhimento",
+            motivo: "Oposição à criação de um centro para solicitantes de asilo.",
+            consequencia: "O episódio gerou confrontos e debate sobre o acolhimento de refugiados.",
+            fonte: "https://nos.nl/"
+        },
+        {
+            lat: 39.62,
+            lng: 19.92,
+            nome: "Protestos contra centros de recepção",
+            pais: "Grécia",
+            data: "Fevereiro de 2020",
+            imagem: "grecia_centros_de_recepcao.jpg",
+            participantes: "Moradores e grupos contrários à construção de novos centros",
+            motivo: "Discordância em relação aos planos de criação de centros fechados de recepção nas ilhas.",
+            consequencia: "Os protestos refletiram tensões locais em torno da política de acolhimento. A oposição aos centros não deve ser automaticamente interpretada como xenofobia.",
+            fonte: "https://refugeeobservatory.aegean.gr/"
+        }
+    ];
+
+    // ==========================================
+    // FUNÇÃO PARA CRIAR OS PAINÉIS
+    // ==========================================
+
+
+function criarGlobo(idGlobo, idPainel, pontos, cor) {
+
+    const elemento = document.getElementById(idGlobo);
+    const painel = document.getElementById(idPainel);
+
+    const titulo = painel.querySelector(".titulo-ponto");
+    const texto = painel.querySelector(".texto-ponto");
+    const botaoFechar = painel.querySelector(".fechar-painel");
+
+    // Criar a imagem e a observação apenas uma vez
+    const imagem = document.createElement("img");
+    imagem.className = "imagem-protesto";
+    imagem.alt = "Imagem do acontecimento";
+
+    const observacao = document.createElement("p");
+    observacao.className = "observacao-imagem";
+
+    const globo = Globe()(elemento)
+        .globeImageUrl(
+            "https://unpkg.com/three-globe/example/img/earth-night.jpg"
+        )
+        .backgroundColor("#101923")
+        .showAtmosphere(true)
+        .atmosphereColor(cor)
+        .atmosphereAltitude(0.20)
+        .htmlElementsData(pontos)
+        .htmlLat("lat")
+        .htmlLng("lng")
+        .htmlAltitude(0.02)
+        .htmlElement(d => {
+
+            const pin = document.createElement("div");
+
+            pin.className = "pin-protesto";
+            pin.title = `${d.nome} — ${d.pais}`;
+
+            pin.innerHTML = `
+                <svg viewBox="0 0 26 32" aria-hidden="true">
+                    <path
+                        d="M13 1C6.4 1 1 6.3 1 12.8C1 21 13 31 13 31S25 21 25 12.8C25 6.3 19.6 1 13 1Z"
+                        fill="${cor}"
+                    />
+                    <circle cx="13" cy="12" r="4.2" fill="#101923"/>
+                </svg>
+            `;
+
+            pin.addEventListener("click", event => {
+
+                event.stopPropagation();
+
+                titulo.textContent = d.nome;
+                texto.innerHTML = "";
+
+                // Remover os elementos anteriores antes de atualizar
+                imagem.remove();
+                observacao.remove();
+
+                // Atualizar e inserir a imagem
+                imagem.src = `{{ url_for('static', filename='images/protestos/') }}${encodeURIComponent(d.imagem)}`;
+                imagem.alt = d.nome;
+
+                painel.insertBefore(imagem, titulo);
+
+                // Mostrar observação somente quando existir
+                if (d.observacao) {
+                    observacao.textContent = d.observacao;
+                    painel.insertBefore(observacao, titulo);
+                }
+
+                // País e data
+                const identificacao = document.createElement("div");
+                identificacao.className = "identificacao-evento";
+
+                const pais = document.createElement("span");
+                pais.textContent = d.pais;
+
+                const data = document.createElement("span");
+                data.textContent = d.data;
+
+                identificacao.appendChild(pais);
+                identificacao.appendChild(data);
+
+                texto.appendChild(identificacao);
+
+                // Participantes, motivo e consequências
+                const informacoes = [
+                    ["Participantes", d.participantes],
+                    ["Motivo", d.motivo],
+                    ["Consequências", d.consequencia]
+                ];
+
+                informacoes.forEach(([nome, valor]) => {
+
+                    const bloco = document.createElement("div");
+                    bloco.className = "informacao-evento";
+
+                    const subtitulo = document.createElement("strong");
+                    subtitulo.textContent = nome;
+                    subtitulo.style.color = cor;
+
+                    const conteudo = document.createElement("span");
+                    conteudo.textContent = valor;
+
+                    bloco.appendChild(subtitulo);
+                    bloco.appendChild(conteudo);
+
+                    texto.appendChild(bloco);
+                });
+
+                // Fonte
+                const link = document.createElement("a");
+
+                link.href = d.fonte;
+                link.target = "_blank";
+                link.rel = "noopener noreferrer";
+                link.textContent = "Consultar fonte ↗";
+                link.className = "link-fonte-evento";
+                link.style.color = cor;
+
+                texto.appendChild(link);
+
+                painel.classList.add("ativo");
+
+                globo.controls().autoRotate = false;
+            });
+
+            return pin;
+        });
+
+    // Posição inicial
+    globo.pointOfView({
+        lat: 15,
+        lng: 0,
+        altitude: 1.9
+    }, 1200);
+
+    // Rotação automática
+    globo.controls().autoRotate = true;
+    globo.controls().autoRotateSpeed = 0.25;
+    globo.controls().enableZoom = true;
+    globo.controls().enablePan = false;
+
+    // Fechar painel
+    botaoFechar.addEventListener("click", () => {
+
+        painel.classList.remove("ativo");
+
+        globo.controls().autoRotate = true;
+    });
+
+    // Redimensionar o globo
+    function redimensionarGlobo() {
+        const largura = elemento.getBoundingClientRect().width;
+        const altura = elemento.getBoundingClientRect().height;
+
+    globo
+        .width(largura)
+        .height(altura);
+}
+
+redimensionarGlobo();
+
+window.addEventListener("resize", redimensionarGlobo);
+
+    return globo;
+}
+
+
+    // ==========================================
+    // INICIALIZAÇÃO DOS DOIS GLOBOS
+    // ==========================================
+
+    criarGlobo(
+        "globo-direitos",
+        "painel-direitos",
+        pontosDireitos,
+        "#39c879"
+    );
+
+    criarGlobo(
+        "globo-exclusao",
+        "painel-exclusao",
+        pontosExclusao,
+        "#c77b5b"
+    );
+
+</script>
+
+</body>
+</html>

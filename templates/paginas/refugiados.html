@@ -1,0 +1,623 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Refugiados | CIARTEC</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/refugiados.css') }}">
+</head>
+
+<body>
+
+<header class="cabecalho">
+
+    <div class="logo">
+        <strong>CIARTEC</strong>
+        <span>Migração, Refugiados e Direitos</span>
+    </div>
+
+    <nav>
+        <a href="{{ url_for('inicio') }}">Início</a>
+        <a href="{{ url_for('migracao') }}">Migração</a>
+        <a href="{{ url_for('refugiados') }}">Refugiados</a>
+        <a href="{{ url_for('direitos') }}">Direitos</a>
+        <a href="{{ url_for('protestos') }}">Protestos</a>
+    </nav>
+
+</header>
+
+<main>
+
+    <!-- CAPA -->
+
+    <section class="hero-refugiados">
+
+        <span class="subtitulo">CIARTEC • REFUGIADOS</span>
+
+        <h1>
+            Ninguém deveria
+            precisar fugir
+            para sobreviver.
+        </h1>
+
+        <p>
+            Conheça as histórias, os desafios e a realidade
+            de milhões de pessoas que buscam um lugar seguro.
+        </p>
+
+        <a href="#conceito" class="botao-hero">
+            Conheça essa realidade ↓
+        </a>
+
+    </section>
+
+
+    <!-- CONCEITO -->
+
+    <section class="conceito" id="conceito">
+
+        <div class="texto-conceito">
+
+            <span class="tag">ENTENDA O TEMA</span>
+
+            <h2>O que é ser refugiado?</h2>
+
+            <p>
+                É ser obrigado a deixar seu país por causa de
+                perseguições, guerras, violência ou ameaças
+                à própria segurança.
+            </p>
+
+            <p>
+                Diferentemente de uma escolha comum de mudança,
+                o refúgio acontece pela necessidade de encontrar
+                proteção e segurança.
+            </p>
+
+        </div>
+
+        <div class="destaque-conceito">
+
+            <span class="icone-grande">🌍</span>
+
+            <h3>Deslocamento forçado</h3>
+
+            <p>
+                Quando alguém precisa abandonar sua casa
+                contra a própria vontade para escapar de
+                situações de perigo.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- DIFERENÇAS -->
+
+    <section class="diferencas">
+
+        <div class="titulo-secao">
+
+            <span>VOCÊ SABE A DIFERENÇA?</span>
+
+            <h2>Migrante, refugiado ou solicitante de asilo?</h2>
+
+            <p>
+                Os três termos representam situações diferentes.
+            </p>
+
+        </div>
+
+        <div class="grade-diferencas">
+
+            <article class="card-diferenca">
+
+                <span>🧳</span>
+
+                <h3>Migrante</h3>
+
+                <p>
+                    Pessoa que muda de lugar ou país,
+                    geralmente em busca de melhores
+                    oportunidades e condições de vida.
+                </p>
+
+            </article>
+
+            <article class="card-diferenca destaque-card">
+
+                <span>🛡️</span>
+
+                <h3>Refugiado</h3>
+
+                <p>
+                    Pessoa que precisa sair do país
+                    devido a perseguições, conflitos
+                    ou ameaças à sua segurança.
+                </p>
+
+            </article>
+
+            <article class="card-diferenca">
+
+                <span>📄</span>
+
+                <h3>Solicitante de asilo</h3>
+
+                <p>
+                    Pessoa que pediu proteção internacional,
+                    mas ainda aguarda uma decisão sobre
+                    seu pedido.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ESTATÍSTICAS -->
+
+    <section class="dados-mundo">
+
+        <div class="titulo-secao">
+
+            <span>REFÚGIO PELO MUNDO</span>
+
+            <h2>Um cenário que atravessa fronteiras</h2>
+
+            <p>
+                Conheça alguns dos principais países
+                relacionados ao deslocamento de refugiados.
+            </p>
+
+        </div>
+
+        <div class="painel-dados">
+
+            <div class="grupo-dados">
+
+                <h3>🌎 Países de origem</h3>
+
+                <p class="descricao-dados">
+                    Principais países de onde vêm os refugiados.
+                </p>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇻🇪 Venezuela</span>
+                        <strong>6,5 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇺🇦 Ucrânia</span>
+                        <strong>5,9 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 91%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇸🇾 Síria</span>
+                        <strong>4,9 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 75%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇦🇫 Afeganistão</span>
+                        <strong>3,7 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 57%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇸🇩 Sudão</span>
+                        <strong>2,8 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 43%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="grupo-dados">
+
+                <h3>🏳️ Países que recebem</h3>
+
+                <p class="descricao-dados">
+                    Países que acolhem grandes populações refugiadas.
+                </p>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇨🇴 Colômbia</span>
+                        <strong>2,8 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 100%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇩🇪 Alemanha</span>
+                        <strong>2,7 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 96%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇹🇷 Turquia</span>
+                        <strong>2,4 milhões</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 86%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇺🇬 Uganda</span>
+                        <strong>1,9 milhão</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 68%"></div>
+                    </div>
+                </div>
+
+                <div class="dado">
+                    <div class="dado-info">
+                        <span>🇮🇷 Irã</span>
+                        <strong>1,7 milhão</strong>
+                    </div>
+                    <div class="barra">
+                        <div style="width: 61%"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <p class="observacao-dados">
+            * Valores informados na pesquisa do grupo.
+            Acrescente o ano e a fonte original dos dados
+            antes de publicar.
+        </p>
+
+    </section>
+
+
+    <!-- CAUSAS -->
+
+    <section class="causas">
+
+        <div class="titulo-secao">
+
+            <span>POR QUE ISSO ACONTECE?</span>
+
+            <h2>O que leva alguém a fugir?</h2>
+
+        </div>
+
+        <div class="grade-causas">
+
+            <div class="causa">
+                <span>⚔️</span>
+                <strong>Guerras e conflitos</strong>
+            </div>
+
+            <div class="causa">
+                <span>🏛️</span>
+                <strong>Perseguição política</strong>
+            </div>
+
+            <div class="causa">
+                <span>🌎</span>
+                <strong>Preconceito étnico e racial</strong>
+            </div>
+
+            <div class="causa">
+                <span>🕌</span>
+                <strong>Intolerância religiosa</strong>
+            </div>
+
+            <div class="causa">
+                <span>⚖️</span>
+                <strong>Violação de direitos humanos</strong>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<!-- REFÚGIO NO BRASIL -->
+
+<section class="brasil-refugiados">
+
+    <div class="imagem-brasil">
+        <img
+            src="{{ url_for('static', filename='imagens/refugiados-brasil.jpg') }}"
+            alt="Acolhimento de pessoas refugiadas no Brasil">
+    </div>
+
+    <div class="texto-brasil">
+
+        <span>OLHANDO PARA NOSSA REALIDADE</span>
+
+        <h2>O refúgio também acontece aqui.</h2>
+
+        <p>
+            O Brasil também recebe pessoas que precisam
+            deixar seus países em busca de proteção.
+        </p>
+
+        <p>
+            Um exemplo importante é a chegada de venezuelanos,
+            que buscam segurança e melhores condições de vida.
+        </p>
+
+        <div class="curiosidade-brasil">
+            <strong>Você sabia?</strong>
+
+            <p>
+                O Brasil possui uma legislação específica
+                sobre refúgio: a Lei nº 9.474, de 1997.
+                O CONARE é responsável por analisar os
+                pedidos de reconhecimento da condição
+                de refugiado.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+    <!-- DESAFIOS -->
+
+    <section class="desafios">
+
+        <div class="titulo-secao">
+
+            <span>UMA NOVA REALIDADE</span>
+
+            <h2>Os desafios de recomeçar</h2>
+
+            <p>
+                Chegar a um lugar seguro é apenas o começo.
+            </p>
+
+        </div>
+
+        <div class="grade-desafios">
+
+            <article class="card-desafio">
+                <span>🗣️</span>
+                <h3>Idioma</h3>
+                <p>Aprender uma nova língua e conseguir se comunicar.</p>
+            </article>
+
+            <article class="card-desafio">
+                <span>📑</span>
+                <h3>Documentação</h3>
+                <p>Regularizar documentos e acessar serviços.</p>
+            </article>
+
+            <article class="card-desafio">
+                <span>🚫</span>
+                <h3>Preconceito</h3>
+                <p>Enfrentar discriminação e exclusão social.</p>
+            </article>
+
+            <article class="card-desafio">
+                <span>💼</span>
+                <h3>Emprego</h3>
+                <p>Encontrar oportunidades de trabalho.</p>
+            </article>
+
+            <article class="card-desafio">
+                <span>🏠</span>
+                <h3>Moradia</h3>
+                <p>Conseguir um lar seguro e adequado.</p>
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- ACOLHIMENTO -->
+
+    <section class="acolhimento">
+
+        <div class="titulo-secao">
+
+            <span>RECONSTRUIR VIDAS</span>
+
+            <h2>O acolhimento faz a diferença</h2>
+
+            <p>
+                Ter acesso a direitos básicos permite que
+                refugiados reconstruam suas vidas com dignidade.
+            </p>
+
+        </div>
+
+        <div class="grade-acolhimento">
+
+            <article class="item-acolhimento">
+                <span>🏠</span>
+                <div>
+                    <h3>Moradia</h3>
+                    <p>Um lugar seguro para viver e recomeçar.</p>
+                </div>
+            </article>
+
+            <article class="item-acolhimento">
+                <span>💼</span>
+                <div>
+                    <h3>Trabalho</h3>
+                    <p>Independência financeira e novas oportunidades.</p>
+                </div>
+            </article>
+
+            <article class="item-acolhimento">
+                <span>🎓</span>
+                <div>
+                    <h3>Educação</h3>
+                    <p>Acesso à escola e continuidade dos estudos.</p>
+                </div>
+            </article>
+
+            <article class="item-acolhimento">
+                <span>❤️</span>
+                <div>
+                    <h3>Saúde</h3>
+                    <p>Atendimento médico, vacinação e medicamentos.</p>
+                </div>
+            </article>
+
+            <article class="item-acolhimento">
+                <span>🤝</span>
+                <div>
+                    <h3>Integração social</h3>
+                    <p>Participação na comunidade e respeito às diferenças.</p>
+                </div>
+            </article>
+
+        </div>
+
+    </section>
+
+<!-- COMO AJUDAR -->
+
+<section class="como-ajudar">
+
+    <div class="titulo-secao">
+
+        <span>FAÇA A DIFERENÇA</span>
+
+        <h2>Como podemos ajudar?</h2>
+
+        <p>
+            Pequenas atitudes também ajudam a construir
+            uma sociedade mais acolhedora.
+        </p>
+
+    </div>
+
+    <div class="ajudas">
+
+        <div class="ajuda">
+            <span>💙</span>
+            <h3>Combata o preconceito</h3>
+            <p>Respeite as diferenças e acolha sem julgamentos.</p>
+        </div>
+
+        <div class="ajuda">
+            <span>📢</span>
+            <h3>Compartilhe informação</h3>
+            <p>Divulgue informações verdadeiras sobre o refúgio.</p>
+        </div>
+
+        <div class="ajuda">
+            <span>🤲</span>
+            <h3>Apoie iniciativas</h3>
+            <p>Conheça organizações que ajudam pessoas refugiadas.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- MENSAGEM FINAL -->
+
+    <section class="mensagem-final">
+
+        <span>MAIS HUMANIDADE, MENOS FRONTEIRAS</span>
+
+        <h2>
+            Por trás de cada refugiado,
+            existe uma história.
+        </h2>
+
+        <p>
+            Acolher é reconhecer que todos merecem
+            segurança, respeito e a oportunidade de recomeçar.
+        </p>
+
+    </section>
+
+
+    <!-- FONTES -->
+
+    <section class="fontes">
+
+        <h2>Saiba mais</h2>
+
+        <p>
+            Conheça organizações que trabalham na proteção
+            e no acolhimento de refugiados.
+        </p>
+
+        <div class="fontes-lista">
+
+            <a href="https://www.acnur.org/br/"
+               target="_blank" rel="noopener noreferrer">
+                <strong>ACNUR ↗</strong>
+                <span>Agência da ONU para Refugiados</span>
+            </a>
+
+            <a href="https://brazil.iom.int/"
+               target="_blank" rel="noopener noreferrer">
+                <strong>OIM ↗</strong>
+                <span>Organização Internacional para as Migrações</span>
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        Projeto CIARTEC — Migração, Refugiados e Direitos Humanos
+    </p>
+
+</footer>
+
+</body>
+</html>
